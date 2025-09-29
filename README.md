@@ -159,7 +159,7 @@ https://drive.usercontent.google.com/download?id=1IHtqsgXixh6pMkBdi1LM3KuQWYV4fH
 ```sh
 tar -xjf xcvu3p.tar.bz2
 ```
-- The xcvu3p.device file will then be created and for the router remember to enter the full location of th e device file (type in pwd to get the current directory path)
+- The xcvu3p.device file will then be created and for the router remember to enter the full location of the device file (type in pwd to get the current directory path)
 
 ### Build
 
@@ -174,6 +174,7 @@ g++ -std=c++11 -fopenmp -O3 project_finalver.cpp -o router
 ```sh
 ./router <netlist_file> <output_file> <device_file>
 ```
+*Note- Make sure to enter the full file paths to be safe (used pwd to get the directory path)
 
 **Example:**
 ```sh
@@ -186,11 +187,11 @@ g++ -std=c++11 -fopenmp -O3 project_finalver.cpp -o router
 - Writes route file
 - Prints progress and timing
 
-**On HPC:**
+**On HPC (the server used for testing project):**
 - Use Slurm:  
   `srun -p hpc_72h -w hpc[11-14] --cpus-per-task=8 --pty bash -i`
 - Test runtime to meet limits
-
+Note - Number of threads is limited to 8 for the project!
 ---
 
 ## Benchmarks & Grading
@@ -219,13 +220,10 @@ g++ -std=c++11 -fopenmp -O3 project_finalver.cpp -o router
 ## FAQ
 
 - **How to reduce device file reading time?**  
-  Use multi-threading (implemented) or serialization (not implemented).
+  Use multi-threading (implemented)
 
 - **How to view large files?**  
   Use `less` or `tail -n <lines> <file>`.
-
-- **Disk quota issues?**  
-  Use shared `/research/d1/gds/whlin23/public/xcvu3p.device`.
 
 ---
 
